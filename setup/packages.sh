@@ -32,7 +32,7 @@ apt-get install -y python3-pip
 
 # middlewares
 
-apt install -y apache2
-apt install -y mysql-server
-apt install -y php
-apt install -y php-curl php-dev php-gd php-xml php-yaml php-mbstring php-mysqlnd
+DEBIAN_FRONTEND=noninteractive NEEDRESTART_MODE=a apt install -y apache2
+DEBIAN_FRONTEND=noninteractive NEEDRESTART_MODE=a apt install -y mysql-server
+DEBIAN_FRONTEND=noninteractive NEEDRESTART_MODE=a apt install -y php
+DEBIAN_FRONTEND=noninteractive NEEDRESTART_MODE=a apt install -y php-curl php-dev php-gd php-xml php-yaml php-mbstring php-mysqlnd
