@@ -1,0 +1,13 @@
+[Unit]
+Description=Prometheus Server
+Documentation=https://prometheus.io/docs/introduction/overview/
+After=network-online.target
+
+[Service]
+Type=simple
+User=nobody
+ExecStart=/usr/local/prometheus/prometheus --config.file=/usr/local/prometheus/prometheus.yml --storage.tsdb.retention.time=40d --query.timeout=10s --web.read-timeout=30s --query.lookback-delta=30m --enable-feature=promql-experimental-functions
+WorkingDirectory=/usr/local/prometheus
+
+[Install]
+WantedBy=multi-user.target
