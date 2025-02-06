@@ -35,14 +35,21 @@ php-sessionless-conference-ebpf-workshop
 
 ### パッケージインストール
 
-```
+```bash
 sudo setup/01-packages.sh
 ```
 
 ### Apache/PHPセットアップ
 
-- config配置
-- apacheの環境変数設定
+```bash
+sudo setup/apache.sh
+```
+
+確認
+
+```bash
+sudo systemctl cat apache2.service
+```
 
 ### ebpf_exporterセットアップ
 
