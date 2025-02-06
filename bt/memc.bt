@@ -1,0 +1,19 @@
+#!/usr/bin/env bpftrace
+
+uprobe:/usr/lib/x86_64-linux-gnu/libmemcached.so.11:memcached_set
+{
+    // 引数の取得
+    //$ptr = (memcached_st*)arg0;
+    $key = str(arg1, arg2);          // arg1: key, arg2: key_length
+    $value = str(arg3, arg4);        // arg3: value, arg4: value_length
+    $expiration = arg5;              // 有効期限
+    //$flags = arg6;                   // フラグ
+
+    // 出力
+    printf("memcached_set called:\n");
+    printf("Key: %s\n", $key);
+    printf("Value: %s\n", $value);
+    printf("Expiration: %d\n", $expiration);
+    //printf("Flags: %d\n", $flags);
+}
+
