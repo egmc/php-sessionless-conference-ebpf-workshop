@@ -38,4 +38,4 @@ apt install -y apache2
 apt install -y mysql-server
 apt install -y memcached
 apt install -y php
-apt install -y php-curl php-dev php-gd php-xml php-yaml php-mbstring php-mysqlnd
+apt install -y php-curl php-dev php-gd php-xml php-yaml php-mbstring php-mysqlnd php-memcached

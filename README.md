@@ -22,6 +22,8 @@ php-sessionless-conference-ebpf-workshop
 
 ### port開放
 
+セキュリティ上の懸念は低めですが、気になる場合は作業環境のIPのみ許可してください
+
 - 3000 (Grafana)
 - 80(apache/php)
 
