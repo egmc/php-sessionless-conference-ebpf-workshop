@@ -188,12 +188,22 @@ BPFプログラムのサンプルを配置
 ```
 cd ..
 php-sessionless-conference-ebpf-workshop/setup/06-ebpf_exporter_src.sh
+
+cd ebpf_exporter/examples/
+make
+
+cd ..
+sudo ebpf_exporter --config.dir=examples --config.names=php
 ```
 
 
 ## bpftraceを利用したトレース体験(10m)
 
-  - TBDサンプルコマンド
+本レポジトリ以下で
+
+```bash
+sudo bt/memc.bt
+```
 
 ## ebpf exporterを利用した可視化の実装(40m)
 
