@@ -171,7 +171,7 @@ BPFプログラムのサンプルを配置
 
 ```
 cd ..
-php-sessionless-conference-ebpf-workshop/setup/ebpf_exporter_src.sh
+php-sessionless-conference-ebpf-workshop/setup/06-ebpf_exporter_src.sh
 ```
 
 
