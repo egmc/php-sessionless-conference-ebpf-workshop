@@ -4,6 +4,8 @@ php-sessionless-conference-ebpf-workshop
 
 ## eBPFの概要説明
 
+![概要図](images/ebpf-exporter.drawio.png)
+
  - 概要説明している間にパッケージインストール済ませたい
  - スライド
    - とりあえずこれ https://speakerdeck.com/egmc/phpapurikesiyonniokeruebpfnoshi-isuo
