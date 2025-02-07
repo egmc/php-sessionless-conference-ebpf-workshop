@@ -30,7 +30,7 @@ php-sessionless-conference-ebpf-workshop
 以下は公開の必要なし、使用ポート
 
 - 9090(Prometheus)
-- xxx (eBPF Exporter)
+- 9435 (eBPF Exporter)
 
 
 ### パッケージインストール
@@ -58,8 +58,16 @@ sudo systemctl cat apache2.service
 
 ### Prometheusセットアップ
 
-- バイナリ配置
-- スクレイプ設定配置
+```
+sudo setup/prometheus.sh
+```
+
+確認
+
+```bash
+systemctl status prometheus
+curl http://localhost:9090/metrics
+```
 
 ### Grafanaセットアップ
 
