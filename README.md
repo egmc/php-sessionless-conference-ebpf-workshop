@@ -17,6 +17,10 @@ php-sessionless-conference-ebpf-workshop
 
 https://ebpf.io/what-is-ebpf/
 
+Probeタイプ
+
+https://github.com/bpftrace/bpftrace/tree/master?tab=readme-ov-file#probe-types
+
 ### 今回の構成図
 
 ![概要図](images/ebpf-exporter.drawio.png)
