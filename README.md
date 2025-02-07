@@ -157,13 +157,29 @@ Grafanaパッケージのインストール
 sudo setup/05-grafana.sh
 ```
 
-起動後の設定
+#### 初期設定
 
 - 起動後、http://{Public IP}:3000 へアクセス
 - admin/adminでログイン
 - 任意のパスワードを設定
-- データソース設定
-- サンプルダッシュボード取り込み
+
+#### データソース設定
+
+Prometheusを設定
+![データソース1](images/ds1.png)
+
+`http://localhost:9090` を設定
+![データソース2](images/ds2.png)
+
+
+#### サンプルダッシュボード取り込み
+
+import dashboard
+![ダッシュボード1](images/dashboard-1.png)
+
+`setup/dashboards/` 以下のjsonファイルをアップロード
+![ダッシュボード2](images/dashboard-2.png)
+
 
 ### bpf_exporterの設定、BPFプログラムのビルド
 
