@@ -188,14 +188,7 @@ BPFプログラムのサンプルを配置
 ```
 cd ..
 php-sessionless-conference-ebpf-workshop/setup/06-ebpf_exporter_src.sh
-
-cd ebpf_exporter/examples/
-make
-
-cd ..
-sudo ebpf_exporter --config.dir=examples --config.names=php
 ```
-
 
 ## bpftraceを利用したトレース体験(10m)
 
@@ -205,15 +198,70 @@ sudo ebpf_exporter --config.dir=examples --config.names=php
 sudo bt/memc.bt
 ```
 
+/mem.phpへアクセス
+
+以下サンプル
+
+```bash
+
+sudo bpftrace -l
+sudo bpftrace -l 'uprobe:/usr/lib/apache2/modules/libphp8.1.so:*'
+
+# see https://www.php.net/manual/en/features.dtrace.dtrace.php
+sudo bpftrace -l 'usdt:/usr/lib/apache2/modules/libphp8.1.so:*'
+
+
+# opcacheを切ったりしてみる
+sudo phpdismod opcache
+sudo service apache2 restart
+
+sudo bpftrace -e 'usdt:/usr/lib/apache2/modules/libphp8.1.so:php:compile__file__return { printf("%s, %s\n", str(arg0), str(arg1)); }'
+```
+
+ref: https://github.com/bpftrace/bpftrace/blob/master/docs/tutorial_one_liners_japanese.md
+
+
 ## ebpf exporterを利用した可視化の実装(40m)
 
- - サンプルのビルド
- - トレース実行
-   - ログの確認
-   - BPF_MAPの確認
-   - exporter出力の確認
-   - Grafanaのクエリ結果確認
-   - 余力があればコードを変更
+### サンプルのビルド
+
+```
+cd ebpf_exporter/examples/
+make
+
+```
+
+### トレース実行
+
+```
+cd ..
+sudo ebpf_exporter --config.dir=examples --config.names=php
+```
+
+#### ログの確認
+
+```
+sudo cat /sys/kernel/debug/tracing/trace_pipe
+```
+
+#### BPF_MAPの確認
+
+```
+sudo bpftool map
+
+# php_compileのmap確認
+sudo bpftool map dump id `sudo bpftool map |grep php_compile |egrep -o '^[0-9]+'`
+```
+
+
+#### exporter出力の確認
+
+```
+curl -s http://localhost:9435/metrics | grep -v ^# |grep  ^ebpf_exporter_php
+```
+
+#### Grafanaのクエリ結果確認
+#### 余力があればコードを変更
 
 ## ユースケースについてのディスカッション（10m）
 
