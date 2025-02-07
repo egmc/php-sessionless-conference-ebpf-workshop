@@ -235,6 +235,11 @@ make
 
 ```
 
+ビルドしながらサンプルを読む
+
+- https://github.com/egmc/ebpf_exporter/blob/ebpf-php-sample/examples/php.bpf.c
+- https://github.com/egmc/ebpf_exporter/blob/ebpf-php-sample/examples/php.yaml
+
 ### トレース実行
 
 ```
