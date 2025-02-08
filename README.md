@@ -279,4 +279,7 @@ curl -s http://localhost:9435/metrics | grep -v ^# |grep  ^ebpf_exporter_php
 
 # その他参考資料
 
-- https://speakerdeck.com/egmc/phpapurikesiyonniokeruebpfnoshi-isuo
+ - [PHPアプリケーションにおけるeBPFの使い所](https://speakerdeck.com/egmc/phpapurikesiyonniokeruebpfnoshi-isuo)
+ - [ebpf_exporter](https://github.com/cloudflare/ebpf_exporter)
+ - [Prometheus](https://prometheus.io/)
+ - [Grafana](https://grafana.com/oss/grafana/)
