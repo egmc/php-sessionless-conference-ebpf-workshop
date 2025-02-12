@@ -30,6 +30,7 @@ https://github.com/bpftrace/bpftrace/tree/master?tab=readme-ov-file#probe-types
 
 - sudoできるユーザーなら良いですが、便宜上デフォルトのubuntuユーザーを想定、必要な部分は適宜読み替えで
 - ターミナルをいくつか切り替えるのでscreen/tmux等必要に応じてよしなにご利用ください
+- 途中でサンプルコードをmakeでビルドするフェーズがありますが、現状かなり時間がかかるのでscreen等で実行してしばらくまつか、可能であればsmall相当くらいの少し良いスペックで実行するとスムーズかもしれません。
 
 セットアップ後、ユーザーのホーム（/home/ubuntu）以下では以下のようなパスになる想定です
 
