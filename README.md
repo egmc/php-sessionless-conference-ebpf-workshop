@@ -30,6 +30,7 @@ https://github.com/bpftrace/bpftrace/tree/master?tab=readme-ov-file#probe-types
 
 - sudoできるユーザーなら良いですが、便宜上デフォルトのubuntuユーザーを想定、必要な部分は適宜読み替えで
 - ターミナルをいくつか切り替えるのでscreen/tmux等必要に応じてよしなにご利用ください
+- 途中でサンプルコードをmakeでビルドするフェーズがありますが、現状かなり時間がかかるのでscreen等で実行してしばらくまつか、可能であればsmall相当くらいの少し良いスペックで実行するとスムーズかもしれません。
 
 セットアップ後、ユーザーのホーム（/home/ubuntu）以下では以下のようなパスになる想定です
 
@@ -235,6 +236,11 @@ make
 
 ```
 
+ビルドしながらサンプルを読む
+
+- https://github.com/egmc/ebpf_exporter/blob/ebpf-php-sample/examples/php.bpf.c
+- https://github.com/egmc/ebpf_exporter/blob/ebpf-php-sample/examples/php.yaml
+
 ### トレース実行
 
 ```
@@ -274,4 +280,7 @@ curl -s http://localhost:9435/metrics | grep -v ^# |grep  ^ebpf_exporter_php
 
 # その他参考資料
 
-- https://speakerdeck.com/egmc/phpapurikesiyonniokeruebpfnoshi-isuo
+ - [PHPアプリケーションにおけるeBPFの使い所](https://speakerdeck.com/egmc/phpapurikesiyonniokeruebpfnoshi-isuo)
+ - [ebpf_exporter](https://github.com/cloudflare/ebpf_exporter)
+ - [Prometheus](https://prometheus.io/)
+ - [Grafana](https://grafana.com/oss/grafana/)
